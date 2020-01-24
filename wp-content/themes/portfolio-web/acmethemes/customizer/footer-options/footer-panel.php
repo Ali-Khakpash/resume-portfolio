@@ -3,7 +3,8 @@
 $wp_customize->add_panel( 'portfolio-web-footer-panel', array(
     'priority'       => 80,
     'capability'     => 'edit_theme_options',
-    'title'          => esc_html__( 'Footer Options', 'portfolio-web' ),
+    'title'          => esc_html__( 'Footer Optionsdddd
+    ', 'portfolio-web' ),
     'description'    => esc_html__( 'Customize your awesome site footer ', 'portfolio-web' )
 ) );
 

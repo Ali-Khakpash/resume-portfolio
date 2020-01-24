@@ -87,7 +87,9 @@ if ( !function_exists('portfolio_web_feature_info') ) :
 			<?php
 			$i++;
 		}
+		var_dump($portfolio_web_basic_info_data[0]['icon']);
 		echo "</div>";/*.infowrapper*/
+
 	}
 endif;
 add_action( 'portfolio_web_action_feature_info', 'portfolio_web_feature_info', 20 );

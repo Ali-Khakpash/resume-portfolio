@@ -3,7 +3,7 @@
 $wp_customize->add_section( 'portfolio-web-feature-info', array(
 	'priority'       => 20,
 	'capability'     => 'edit_theme_options',
-	'title'          => esc_html__( 'Feature Info', 'portfolio-web' ),
+	'title'          => esc_html__( 'Feature Infox', 'portfolio-web' ),
 	'panel'          => 'portfolio-web-header-panel'
 ) );
 

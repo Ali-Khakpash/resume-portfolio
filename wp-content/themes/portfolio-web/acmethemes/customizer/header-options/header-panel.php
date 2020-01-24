@@ -13,6 +13,12 @@ $wp_customize->add_panel( 'portfolio-web-header-panel', array(
 require portfolio_web_file_directory('acmethemes/customizer/header-options/header-top.php');
 
 /*
+* file for header test options
+*/
+require portfolio_web_file_directory('acmethemes/customizer/header-options/test-info.php');
+
+
+/*
 * file for feature info
 */
 require portfolio_web_file_directory('acmethemes/customizer/header-options/feature-info.php');

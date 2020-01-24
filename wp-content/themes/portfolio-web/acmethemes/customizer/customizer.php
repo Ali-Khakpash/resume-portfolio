@@ -56,6 +56,10 @@ function portfolio_web_customize_register( $wp_customize ) {
     */
     require portfolio_web_file_directory('acmethemes/customizer/footer-options/footer-panel.php');
 
+    require portfolio_web_file_directory('acmethemes/customizer/test-panel.php');
+
+
+
     /*
     * file for design/layout panel
     */
@@ -85,8 +89,27 @@ function portfolio_web_customize_register( $wp_customize ) {
         $portfolio_web_home_section->title         = esc_html__( 'Home Main Content Area ', 'portfolio-web' );
         $portfolio_web_home_section->priority      = 80;
     }
+
+
+    $portfolio_web_home_sections = $wp_customize->get_section( 'sidebar-widgets-portfolio-web-homee' );
+    if ( ! empty( $portfolio_web_home_sections ) ) {
+        $portfolio_web_home_sections->panel         = '';
+        $portfolio_web_home_sections->title         = esc_html__( 'Homehh Main Content Area ', 'portfolio-web' );
+        $portfolio_web_home_sections->priority      = 80;
+    }
+
+
+
+
 }
 add_action( 'customize_register', 'portfolio_web_customize_register' );
+
+
+
+
+
+
+
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

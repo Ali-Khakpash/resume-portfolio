@@ -253,6 +253,7 @@ if ( ! function_exists( 'portfolio_web_header' ) ) :
                         ?>
                     </span>
                 </div>
+
                 <div class="at-beside-navbar-header">
                     <a href="#" class="close-menu">
                         <span class="menu-icon">
@@ -267,7 +268,14 @@ if ( ! function_exists( 'portfolio_web_header' ) ) :
                 <!--.at-beside-navbar-header-->
             </div>
         </div>
+        <h4>  <?php  print(json_encode($portfolio_web_customizer_all_values))  ?> </h4>
+
+        <?php $current_user = wp_get_current_user();  ?>
+
+        <h1> <?php echo($current_user->user_login) ?> </h1>
+        <h1> <?php var_dump($wp_customize); ?> </h1>
         <?php
+
     }
 endif;
 add_action( 'portfolio_web_action_header', 'portfolio_web_header', 10 );
