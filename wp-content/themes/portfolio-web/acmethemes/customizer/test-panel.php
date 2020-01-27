@@ -1,5 +1,5 @@
 <?php
-/*adding footer options panel*/
+/*adding custom panel for testing*/
 $wp_customize->add_panel( 'portfolio-web-test-panel', array(
     'priority'       => 35,
     'capability'     => 'edit_theme_options',
@@ -8,7 +8,7 @@ $wp_customize->add_panel( 'portfolio-web-test-panel', array(
 ) );
 
 
-/*adding sections for feature info options */
+/*adding sections*/
 $wp_customize->add_section( 'portfolio-web-test-info', array(
     'priority'       => 20,
     'capability'     => 'edit_theme_options',
@@ -17,26 +17,27 @@ $wp_customize->add_section( 'portfolio-web-test-info', array(
 ) );
 
 
-$wp_customize->add_setting( 'portfolio_web_theme_options[portfolio-web-enable-header-test]', array(
+//becareful about sanitize_callback function, it must match the type of input tag
+$wp_customize->add_setting( 'portfolio_web_theme_options[portfolio-web-enable-header-testt]', array(
     'capability'		        => 'edit_theme_options',
-    'sanitize_callback'         => 'portfolio_web_sanitize_checkbox'
+    'sanitize_callback'         => 'portfolio_web_sanitize_allowed_html'
 ) );
-$wp_customize->add_control( 'portfolio_web_theme_options[portfolio-web-enable-header-test]', array(
-    'label'		                => esc_html__( 'sdsddd', 'portfolio-web' ),
+$wp_customize->add_control( 'portfolio_web_theme_options[portfolio-web-enable-header-testt]', array(
+    'label'		                => esc_html__( 'sec', 'portfolio-web' ),
     'section'                   => 'portfolio-web-test-info',
-    'settings'                  => 'portfolio_web_theme_options[portfolio-web-enable-header-test]',
+    'settings'                  => 'portfolio_web_theme_options[portfolio-web-enable-header-testt]',
     'type'	  	                => 'text'
 ) );
 
 
 
-$wp_customize->add_setting( 'portfolio_web_theme_options[portfolio-web-enable-header-testt]', array(
+$wp_customize->add_setting( 'portfolio_web_theme_options[portfolio-web-enable-header-testy]', array(
     'capability'		        => 'edit_theme_options',
-    'sanitize_callback'         => 'portfolio_web_sanitize_checkbox'
+    'sanitize_callback'         => 'portfolio_web_sanitize_allowed_html'
 ) );
-$wp_customize->add_control( 'portfolio_web_theme_options[portfolio-web-enable-header-testst]', array(
-    'label'		                => esc_html__( 'sec', 'portfolio-web' ),
+$wp_customize->add_control( 'portfolio_web_theme_options[portfolio-web-enable-header-testy]', array(
+    'label'		                => esc_html__( 'stesty', 'portfolio-web' ),
     'section'                   => 'portfolio-web-test-info',
-    'settings'                  => 'portfolio_web_theme_options[portfolio-web-enable-header-test]',
+    'settings'                  => 'portfolio_web_theme_options[portfolio-web-enable-header-testy]',
     'type'	  	                => 'text'
 ) );

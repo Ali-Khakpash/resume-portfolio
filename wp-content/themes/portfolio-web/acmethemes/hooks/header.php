@@ -204,6 +204,8 @@ if ( ! function_exists( 'portfolio_web_header' ) ) :
                                 }
                             ?>
                         </div>
+
+                          <?php do_action('portfolio_web_test_hook'); ?>
                     </div>
                 </div>
             </div>
@@ -279,3 +281,16 @@ if ( ! function_exists( 'portfolio_web_header' ) ) :
     }
 endif;
 add_action( 'portfolio_web_action_header', 'portfolio_web_header', 10 );
+
+
+
+if ( ! function_exists( 'portfolio_web_test_hook' ) ) :
+
+    function portfolio_web_test_hook() {
+        global $portfolio_web_customizer_all_values;
+        ?>
+          <h3><?php echo $portfolio_web_customizer_all_values['portfolio-web-enable-header-testy']?> </h3>
+        <?php
+    }
+endif;
+add_action( 'portfolio_web_test_hook', 'portfolio_web_test_hook', 10 );
