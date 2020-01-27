@@ -15,8 +15,8 @@ if ( ! function_exists( 'portfolio_web_featured_slider' ) ) :
 
         $portfolio_web_enable_feature = $portfolio_web_customizer_all_values['portfolio-web-enable-feature'];
         if( is_front_page() && 1 == $portfolio_web_enable_feature && !is_home() ) :
-	        do_action( 'portfolio_web_action_feature_slider' );
-	
+	        do_action( 'portfolio_web_action_feature_slider' ); //this hook exists in
+                                                                    //hooks/slider-selection.php
         endif;
     }
 endif;

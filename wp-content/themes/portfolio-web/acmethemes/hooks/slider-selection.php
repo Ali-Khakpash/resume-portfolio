@@ -54,10 +54,10 @@ if ( !function_exists('portfolio_web_default_slider') ) :
                     <div class="slider-content <?php echo $text_align;?>">
                         <div class="container">
                             <div class="banner-title <?php echo $animation1;?>">
-                                <?php esc_html_e('Portfolio Web - Showcase your Portfolio on the Web World','portfolio-web' );?>
+                                <?php esc_html_e('dfdf','portfolio-web' );?>
                             </div>
                             <div class="image-slider-caption <?php echo $animation2;?>">
-                                <p><?php esc_html_e('The ultimate theme for showcasing Personal Portfolio and Company Portfolio','portfolio-web' );?></p>
+                                <p><?php esc_html_e('lets get it done thank God','portfolio-web' );?></p>
                             </div>
                         </div>
                     </div>
