@@ -63,6 +63,7 @@ if ( ! class_exists( 'Portfolio_Web_About' ) ) {
                 <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title', 'portfolio-web' ); ?></label>
                 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
             </p>
+
             <p>
                 <label for="<?php echo $this->get_field_id( 'sub_title' ); ?>"><?php _e( 'Short Description', 'portfolio-web' ); ?>:</label>
                 <textarea class="widefat" rows="5" cols="15" id="<?php echo $this->get_field_id( 'sub_title' ); ?>" name="<?php echo $this->get_field_name( 'sub_title' ); ?>"><?php echo $sub_title; ?></textarea>
@@ -181,7 +182,7 @@ if ( ! class_exists( 'Portfolio_Web_About' ) ) {
                         if ( !empty( $featured_image ) ) {
 	                        $col = "col-sm-6";
 	                        ?>
-                            <div class="<?php echo $col.' '.$animation;?>">
+                            <div style="float: right !important;" class="<?php echo $col.' '.$animation;?>">
                                 <div class="at-feature-about-img">
                                     <img src="<?php echo $featured_image;?>">
                                 </div>

@@ -39,7 +39,7 @@ if ( !function_exists('portfolio_web_default_slider') ) :
     function portfolio_web_default_slider(){
         $bg_image_style = '';
         if ( get_header_image() ) :
-            $bg_image_style .= 'background-image:url(' . esc_url( get_header_image() ) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
+            //$bg_image_style .= 'background-image:url(' . esc_url( get_header_image() ) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
         else:
             $bg_image_style .= 'background-image:url(' . esc_url( get_template_directory_uri()."/assets/img/default-image.jpg" ) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
         endif; // End header image check.
@@ -54,10 +54,10 @@ if ( !function_exists('portfolio_web_default_slider') ) :
                     <div class="slider-content <?php echo $text_align;?>">
                         <div class="container">
                             <div class="banner-title <?php echo $animation1;?>">
-                                <?php esc_html_e('dfdf','portfolio-web' );?>
+                                <?php esc_html_e('Lorem ipsum','portfolio-web' );?>
                             </div>
                             <div class="image-slider-caption <?php echo $animation2;?>">
-                                <p><?php esc_html_e('lets get it done thank God','portfolio-web' );?></p>
+                                <p><?php esc_html_e('Web Developer','portfolio-web' );?></p>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@ function portfolio_web_slider_from_page(){
 							$image_url[0] = get_template_directory_uri().'/assets/img/default-image.jpg';
 						}
 						if( 'full-screen-bg' == $portfolio_web_fs_image_display_options ){
-							$bg_image_style = 'background-image:url(' . esc_url( $image_url[0] ) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
+							$bg_image_style = 'background-image:url(' . esc_url(  ) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
 						}
 						$slides_single_data = $slides_other_data[get_the_ID()];
 						?>
