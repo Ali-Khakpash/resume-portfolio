@@ -46,6 +46,7 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
             $unique_id          = esc_attr( $instance[ 'unique_id' ] );
             $title              = esc_attr( $instance[ 'title' ] );
             $sub_title          = esc_textarea( $instance['sub_title'] );
+            $duration          = esc_textarea( $instance['duration'] );
             $some_content       = esc_textarea( $instance['some_content'] );
             $featured_image     = esc_url( $instance[ 'featured_image' ] );
             $button_one_text    = esc_attr( $instance[ 'button_one_text' ] );
@@ -60,51 +61,18 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
                 <small><?php esc_html_e('Enter a Unique Section ID. You can use this ID in Menu item for enabling One Page Menu.','portfolio-web')?></small>
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title', 'portfolio-web' ); ?></label>
+                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Project Title', 'portfolio-web' ); ?></label>
                 <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
             </p>
-
             <p>
                 <label for="<?php echo $this->get_field_id( 'sub_title' ); ?>"><?php _e( 'Short Description', 'portfolio-web' ); ?>:</label>
                 <textarea class="widefat" rows="5" cols="15" id="<?php echo $this->get_field_id( 'sub_title' ); ?>" name="<?php echo $this->get_field_name( 'sub_title' ); ?>"><?php echo $sub_title; ?></textarea>
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id( 'some_content' ); ?>"><?php _e( 'Short Content', 'portfolio-web' ); ?>:</label>
-                <textarea class="widefat" rows="5" cols="15" id="<?php echo $this->get_field_id( 'some_content' ); ?>" name="<?php echo $this->get_field_name( 'some_content' ); ?>"><?php echo $some_content; ?></textarea>
+                <label for="<?php echo $this->get_field_id( 'duration' ); ?>"><?php esc_html_e( 'Project Duration', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'duration' ); ?>" name="<?php echo $this->get_field_name( 'duration' ); ?>" type="text" value="<?php echo $duration; ?>" />
             </p>
-            <p>
-                <label for="<?php echo $this->get_field_id('featured_image'); ?>">
-                    <?php esc_html_e( 'Select Featured Image', 'portfolio-web' ); ?>
-                </label>
-                <?php
-                $portfolio_web_display_none = '';
-                if ( empty( $featured_image ) ){
-                    $portfolio_web_display_none = ' style="display:none;" ';
-                }
-                ?>
-                <span class="img-preview-wrap" <?php echo  $portfolio_web_display_none ; ?>>
-                    <img class="widefat" src="<?php echo esc_url( $featured_image ); ?>" alt="<?php esc_attr_e( 'Image preview', 'portfolio-web' ); ?>"  />
-                </span><!-- .img-preview-wrap -->
-                <input type="text" class="widefat" name="<?php echo $this->get_field_name('featured_image'); ?>" id="<?php echo $this->get_field_id('featured_image'); ?>" value="<?php echo esc_url( $featured_image ); ?>" />
-                <input type="button" value="<?php esc_attr_e( 'Upload Image', 'portfolio-web' ); ?>" class="button media-image-upload" data-title="<?php esc_attr_e( 'Select Featured Image','portfolio-web'); ?>" data-button="<?php esc_attr_e( 'Select Featured Image','portfolio-web'); ?>"/>
-                <input type="button" value="<?php esc_attr_e( 'Remove Image', 'portfolio-web' ); ?>" class="button media-image-remove" />
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'button_one_text' ); ?>"><?php esc_html_e( 'Extra Button Text', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'button_one_text' ); ?>" name="<?php echo $this->get_field_name( 'button_one_text' ); ?>" type="text" value="<?php echo $button_one_text; ?>" />
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'button_one_url' ); ?>"><?php esc_html_e( 'Button Link Url', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'button_one_url' ); ?>" name="<?php echo $this->get_field_name( 'button_one_url' ); ?>" type="text" value="<?php echo $button_one_url; ?>" />
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'button_two_text' ); ?>"><?php esc_html_e( 'Extra Button Text', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'button_two_text' ); ?>" name="<?php echo $this->get_field_name( 'button_two_text' ); ?>" type="text" value="<?php echo $button_two_text; ?>" />
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'button_two_url' ); ?>"><?php esc_html_e( 'Button Link Url', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'button_two_url' ); ?>" name="<?php echo $this->get_field_name( 'button_two_url' ); ?>" type="text" value="<?php echo $button_two_url; ?>" />
-            </p>
+
             <?php
         }
 
@@ -124,13 +92,14 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
             $instance = $old_instance;
             $instance[ 'unique_id' ]            = sanitize_key( $new_instance[ 'unique_id' ] );
             $instance[ 'title' ]                = sanitize_text_field( $new_instance[ 'title' ] );
+
             if ( current_user_can('unfiltered_html') ){
                 $instance['sub_title'] =  $new_instance['sub_title'];
-                $instance['some_content'] =  $new_instance['some_content'];
+                $instance['duration'] =  $new_instance['duration'];
             }
             else{
                 $instance['sub_title'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['sub_title'] ) ) );
-                $instance['some_content'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['some_content'] ) ) );
+                $instance['duration'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['duration'] ) ) );
 
             }
 
@@ -163,68 +132,121 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
             $unique_id              = !empty( $instance[ 'unique_id' ] ) ? esc_attr( $instance[ 'unique_id' ] ) : esc_attr( $this->id );
             $title                  = apply_filters( 'widget_title', !empty( $instance['title'] ) ? $instance['title'] : '', $instance, $this->id_base );
             $sub_title              = apply_filters( 'widget_text', !empty( $instance['sub_title'] ) ? $instance['sub_title'] : '' , $instance );
-            $some_content           = apply_filters( 'widget_text', !empty( $instance['some_content'] ) ? $instance['some_content'] : '' , $instance );
-            $featured_image         = esc_url( $instance['featured_image'] );
-            $button_one_text        = esc_html( $instance[ 'button_one_text' ] );
-            $button_one_url         = esc_url( $instance[ 'button_one_url' ] );
-            $button_two_text        = esc_html( $instance[ 'button_two_text' ] );
-            $button_two_url         = esc_url( $instance[ 'button_two_url' ] );
+            $duration               = apply_filters( 'widget_text', !empty( $instance['duration'] ) ? $instance['duration'] : '' , $instance );
 
             $animation = "init-animate zoomIn";
 
             echo $args['before_widget'];
             ?>
-            <section id="<?php echo $unique_id;?>" class="at-widgets at-feature-about">
+
+
+            <section id="<?php echo esc_attr( $unique_id ); ?>" class="at-widgets acme-col-posts <?php ?>">
                 <div class="container">
-                    <div class="row">
+                    <div style="text-align: center">sdsdsdds</div>
+                    <?php
+                    $div_attr = 'class="featured-entries-col"';
+                    ?>
+                    <div <?php echo $div_attr;?>>
                         <?php
-                        $col = "col-sm-12";
-                        if ( !empty( $featured_image ) ) {
-                            $col = "col-sm-6";
-                            ?>
-                            <div style="float: right !important;" class="<?php echo $col.' '.$animation;?>">
-                                <div class="at-feature-about-img">
-                                    <img src="<?php echo $featured_image;?>">
-                                </div>
-                            </div>
-                            <?php
-                        }
-                        ?>
-                        <div class="<?php echo $col;?>">
-                            <?php
-                            if( ! empty( $title ) || !empty( $sub_title ) ){
-                                echo "<div class='at-widget-title-wrapper ".$animation."'>";
-                                if ( ! empty( $title ) ) {
-                                    echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
-                                }
-                                if( !empty( $sub_title ) ) { ?>
-                                    <p class="at-subtitle"><?php echo wp_kses_post( $sub_title ); ?></p>
-                                    <?php
-                                }
-                                echo "</div>";
+                        $portfolio_web_featured_index = 1;
+                            $portfolio_web_list_classes = 'single-list';
+                            if( 1 != $portfolio_web_featured_index && $portfolio_web_featured_index % $column_number == 1 ){
+                                echo "<div class='clearfix'></div>";
                             }
-                            if( !empty( $some_content ) ){
-                                echo "<p class='$animation'>".$some_content."</p>";
+                            if( 1 == $column_number ){
+                                $portfolio_web_list_classes .= " col-sm-12";
                             }
-                            if( !empty( $button_one_text ) ){
-                                ?>
-                                <a href="<?php echo $button_one_url; ?>" class="<?php echo $animation;?> btn btn-primary btn-reverse">
-                                    <?php echo $button_one_text;?>
-                                </a>
-                                <?php
+                            elseif( 2 == $column_number ){
+                                $portfolio_web_list_classes .= " col-sm-6";
                             }
-                            if( !empty( $button_two_text ) ){
-                                ?>
-                                <a href="<?php echo $button_two_url; ?>" class="<?php echo $animation;?> btn btn-primary">
-                                    <?php echo $button_two_text;?>
-                                </a>
-                                <?php
+                            elseif( 3 == $column_number ){
+                                $portfolio_web_list_classes .= " col-sm-4 col-md-4";
+                            }
+                            else{
+                                $portfolio_web_list_classes .= " col-sm-3 col-md-3";
                             }
                             ?>
-                        </div>
-                    </div>
+                            <div class="<?php echo esc_attr( $portfolio_web_list_classes ); ?>">
+                                <article id="post-<?php the_ID(); ?>" <?php post_class( $animation ); ?>>
+                                    <div class="content-wrapper">
+                                        <div class="image-wrap">
+                                            <?php
+                                            $no_blog_image ='';
+                                            if ( has_post_thumbnail() ) {
+                                                ?>
+                                                <!--post thumbnail options-->
+                                                <div class="post-thumb">
+                                                    <?php
+                                                    echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
+
+                                                    echo '</a>';
+                                                    ?>
+
+                                                </div><!-- .post-thumb-->
+                                                <?php
+                                            }
+                                            else{
+                                                $no_blog_image = 'no-image';
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="entry-content <?php echo $no_blog_image?>">
+                                            <div class="entry-header-title">
+                                                <header class="entry-header">
+                                                                                                       </div>-->
+                                                </header>
+                                                <h3 class="entry-title">
+                                                    <?php
+                                                    echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
+                                                    echo 'sdsd';
+                                                    echo '</a>';
+                                                    ?>
+                                                </h3>
+
+                                            </div>
+                                            <?php
+                                                ?>
+                                                <div class="details">
+                                                    <?php
+                                                       echo 'sdsd sdsd
+                                                       sdsdsd
+                                                       sdsd';
+                                                    ?>
+                                                </div>
+                                                <?php
+                                            ?>
+                                            <!--                                                <div class="date">-->
+                                            <!--                                                    <a href="--><?php //the_permalink(); ?><!--">-->
+                                            <!--                                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>-->
+                                            <!--                                                        <span class="day-month">-->
+                                            <!--                                                            <span class="day">-->
+                                            <!--                                                                --><?php //echo esc_html( get_the_date('j') ); ?>
+                                            <!--                                                            </span>-->
+                                            <!--                                                        </span>-->
+                                            <!--                                                        <span class="month">-->
+                                            <!--                                                            --><?php //echo esc_html( get_the_date('F') ).','; ?>
+                                            <!--                                                        </span>-->
+                                            <!--                                                        <span class="year">-->
+                                            <!--                                                            --><?php //echo esc_html( get_the_date('Y') ); ?>
+                                            <!--                                                        </span>-->
+                                            <!--                                                    </a>-->
+                                            <!--                                                </div>-->
+                                            <?php
+                                            if( !empty( $portfolio_web_read_more_text ) ){
+                                                echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
+                                                echo esc_html( $portfolio_web_read_more_text );
+                                                echo '</a>';
+                                            }
+                                            ?>
+                                        </div><!-- .entry-content -->
+                                    </div>
+                                </article><!-- #post-## -->
+                            </div><!--dynamic css-->
+                    </div><!--featured entries-col-->
                 </div>
             </section>
+
+
             <?php
             echo $args['after_widget'];
         }
