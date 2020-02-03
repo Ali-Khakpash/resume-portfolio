@@ -92,6 +92,8 @@ require portfolio_web_file_directory('acmethemes/hooks/template.php');
 */
 require portfolio_web_file_directory('acmethemes/sidebar-widget/acme-about.php');
 
+//require portfolio_web_file_directory('acmethemes/sidebar-widget/acme-test.php');
+
 require portfolio_web_file_directory('acmethemes/sidebar-widget/acme-col-posts.php');
 
 require portfolio_web_file_directory('acmethemes/sidebar-widget/acme-contact.php');

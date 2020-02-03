@@ -86,7 +86,7 @@ function portfolio_web_customize_register( $wp_customize ) {
     $portfolio_web_home_section = $wp_customize->get_section( 'sidebar-widgets-portfolio-web-home' );
     if ( ! empty( $portfolio_web_home_section ) ) {
         $portfolio_web_home_section->panel         = '';
-        $portfolio_web_home_section->title         = esc_html__( 'Home Main Content Area ', 'portfolio-web' );
+        $portfolio_web_home_section->title         = esc_html__( 'Home Main Content Areaa ', 'portfolio-web' );
         $portfolio_web_home_section->priority      = 80;
     }
 

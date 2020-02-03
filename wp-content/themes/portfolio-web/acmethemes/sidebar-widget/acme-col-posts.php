@@ -437,13 +437,13 @@ if ( ! class_exists( 'Portfolio_Web_Posts_Col' ) ) {
                                             <div class="entry-content <?php echo $no_blog_image?>">
                                                 <div class="entry-header-title">
                                                     <header class="entry-header">
-                                                        <div class="entry-meta">
-                                                            <i class="fa fa-tag" aria-hidden="true"></i>
-			                                                <?php
-			                                                portfolio_web_cats_lists()
-			                                                ?>
-                                                        </div><!-- .entry-meta -->
-                                                    </header><!-- .entry-header -->
+<!--                                                        <div class="entry-meta">-->
+<!--                                                            <i class="fa fa-tag" aria-hidden="true"></i>-->
+<!--			                                                --><?php
+//			                                                portfolio_web_cats_lists()
+//			                                                ?>
+<!--                                                        </div>-->
+                                                    </header>
                                                     <h3 class="entry-title">
 		                                                <?php
 		                                                echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
@@ -464,22 +464,22 @@ if ( ! class_exists( 'Portfolio_Web_Posts_Col' ) ) {
 	                                                <?php
                                                 }
                                                 ?>
-                                                <div class="date">
-                                                    <a href="<?php the_permalink(); ?>">
-                                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>
-                                                        <span class="day-month">
-                                                            <span class="day">
-                                                                <?php echo esc_html( get_the_date('j') ); ?>
-                                                            </span>
-                                                        </span>
-                                                        <span class="month">
-                                                            <?php echo esc_html( get_the_date('F') ).','; ?>
-                                                        </span>
-                                                        <span class="year">
-                                                            <?php echo esc_html( get_the_date('Y') ); ?>
-                                                        </span>
-                                                    </a>
-                                                </div>
+<!--                                                <div class="date">-->
+<!--                                                    <a href="--><?php //the_permalink(); ?><!--">-->
+<!--                                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>-->
+<!--                                                        <span class="day-month">-->
+<!--                                                            <span class="day">-->
+<!--                                                                --><?php //echo esc_html( get_the_date('j') ); ?>
+<!--                                                            </span>-->
+<!--                                                        </span>-->
+<!--                                                        <span class="month">-->
+<!--                                                            --><?php //echo esc_html( get_the_date('F') ).','; ?>
+<!--                                                        </span>-->
+<!--                                                        <span class="year">-->
+<!--                                                            --><?php //echo esc_html( get_the_date('Y') ); ?>
+<!--                                                        </span>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
                                                 <?php
                                                 if( !empty( $portfolio_web_read_more_text ) ){
 	                                                echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
