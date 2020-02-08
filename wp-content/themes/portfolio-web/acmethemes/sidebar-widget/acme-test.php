@@ -53,6 +53,17 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
             $button_one_url     = esc_url( $instance[ 'button_one_url' ] );
             $button_two_text    = esc_attr( $instance[ 'button_two_text' ] );
             $button_two_url     = esc_url( $instance[ 'button_two_url' ] );
+
+            //fields for reapeter fields for testing
+	        $id = esc_attr( $instance[ 'id' ] );
+	        $name = esc_attr( $instance[ 'name' ] );
+
+	        $id_2 = esc_attr( $instance[ 'id_2' ] );
+	        $name_2 = esc_attr( $instance[ 'name_2' ] );
+
+	        $test = $instance['test'] = 2;
+	        $ass ='ass';
+
             ?>
             <p>
                 <label for="<?php echo $this->get_field_id( 'unique_id' ); ?>"><?php esc_html_e( 'Section ID', 'portfolio-web' ); ?></label>
@@ -73,7 +84,93 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
                 <input class="widefat" id="<?php echo $this->get_field_id( 'duration' ); ?>" name="<?php echo $this->get_field_name( 'duration' ); ?>" type="text" value="<?php echo $duration; ?>" />
             </p>
 
-            <?php
+
+            <label><?php esc_html_e( 'Add Reapeter Fields', 'portfolio-web' ); ?></label>
+            <br/>
+            <small><?php esc_html_e( 'Add Reapeter Fields For Testing.', 'portfolio-web' ); ?></small>
+
+            <p>
+                <label for="<?php echo $this->get_field_id( 'id' ); ?>"><?php esc_html_e( 'ID', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'id' ); ?>" name="<?php echo $this->get_field_name( 'id' ); ?>" type="text" value="<?php echo $id; ?>" />
+                <br />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'name' ); ?>"><?php esc_html_e( 'Name', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'name' ); ?>" name="<?php echo $this->get_field_name( 'name' ); ?>" type="text" value="<?php echo $name; ?>" />
+            </p>
+
+
+            <p>
+                <label for="<?php echo $this->get_field_id( 'id_2' ); ?>"><?php esc_html_e( 'ID_2', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'id_2' ); ?>" name="<?php echo $this->get_field_name( 'id_2' ); ?>" type="text" value="<?php echo $id_2; ?>" />
+                <br />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'name_2' ); ?>"><?php esc_html_e( 'Name_2', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'name_2' ); ?>" name="<?php echo $this->get_field_name( 'name_2' ); ?>" type="text" value="<?php echo $name_2; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'test' ); ?>"> </label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'test' ); ?>" name="<?php echo $this->get_field_name( 'test' ); ?>" type="hidden" value="50" />
+            </p>
+
+
+
+            <div class="two">
+                <button type="button" class="name"  onclick="textBoxCreate(5)">Name</button>
+                <button type="button" class="email" onclick="emailBoxCreate()">Email</button>
+            </div>
+            <div class="third">
+                <form action="" id="mainform" method="get" name="mainform">
+                    <p id="myForm"></p><input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <script type="text/javascript">
+                // FormGet Online Form Builder JS Code
+                // Creating and Adding Dynamic Form Elements.
+                var i = 1; // Global Variable for Name
+                var j = 1; // Global Variable for E-mail
+                var ass = <?php echo json_encode($instance) ?>;
+
+                /*
+				=================
+				Creating Text Box for name field in the Form.
+				=================
+				*/
+                function textBoxCreate(limit){
+                    if(i< limit) {
+                        var y = document.createElement("INPUT");
+                        y.setAttribute("type", "text");
+                        y.setAttribute("Placeholder", "Name_" + i);
+                        y.setAttribute("Name", "Name_" + i);
+                        y.setAttribute("value",  i);
+                        document.getElementById("myForm").appendChild(y);
+<!--                        --><?php //$instance['js'.i] =  ?>
+                        i++;
+                        console.log(ass);
+                    }
+                }
+                /*
+				=================
+				Creating Text Box for email field in the Form.
+				=================
+				*/
+                function emailBoxCreate(){
+                    var y = document.createElement("INPUT");
+                    var t = document.createTextNode("Email");
+                    y.appendChild(t);
+                    y.setAttribute("Placeholder", "Email_" + j);
+                    y.setAttribute("Name", "Email_" + j);
+                    document.getElementById("myForm").appendChild(y);
+                    j++;
+                }
+
+            </script>
+
+
+
+	        <?php
         }
 
         /**
@@ -91,7 +188,16 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
         public function update( $new_instance, $old_instance ) {
             $instance = $old_instance;
             $instance[ 'unique_id' ]            = sanitize_key( $new_instance[ 'unique_id' ] );
-            $instance[ 'title' ]                = sanitize_text_field( $new_instance[ 'title' ] );
+            $instance[ 'title' ]                = $new_instance[ 'title' ] ;
+
+	        $instance[ 'test' ] = $new_instance[ 'test' ] ;
+
+
+            $instance['add'] = array(
+                    'id' => $instance[ 'title' ]
+            );
+
+
 
             if ( current_user_can('unfiltered_html') ){
                 $instance['sub_title'] =  $new_instance['sub_title'];
@@ -109,6 +215,24 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
             $instance[ 'button_one_url' ]       = esc_url_raw( $new_instance[ 'button_one_url' ] );
             $instance[ 'button_two_text' ]      = sanitize_text_field( $new_instance[ 'button_two_text' ] );
             $instance[ 'button_two_url' ]       = esc_url_raw( $new_instance[ 'button_two_url' ] );
+
+            //reapeted fields for testing
+	        $instance[ 'id' ] = $new_instance[ 'id' ] ;
+	        $instance[ 'name' ] = $new_instance[ 'name' ] ;
+	        $instance[ 'id_2' ] = $new_instance[ 'id_2' ] ;
+	        $instance[ 'name_2' ] = $new_instance[ 'name_2' ] ;
+
+	        $instance['all'] = array(
+	                'id-1' => array(
+	                        'id' => $instance[ 'id' ],
+                            'name' => $instance[ 'name' ]
+            ),
+
+	                'id-2' => array(
+		                'id' => $instance[ 'id_2' ],
+		                'name' => $instance[ 'name_2' ]
+	                ),
+	        );
 
             return $instance;
         }
@@ -135,6 +259,7 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
             $duration               = apply_filters( 'widget_text', !empty( $instance['duration'] ) ? $instance['duration'] : '' , $instance );
 
             $animation = "init-animate zoomIn";
+            $instance['new'] = 'new';
 
             echo $args['before_widget'];
             ?>
@@ -208,9 +333,9 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
                                                 ?>
                                                 <div class="details">
                                                     <?php
-                                                       echo 'sdsd sdsd
-                                                       sdsdsd
-                                                       sdsd';
+                                                      var_dump($instance);
+                                                      echo count($instance['all']);
+                                                      //echo json_encode($_REQUEST);
                                                     ?>
                                                 </div>
                                                 <?php
