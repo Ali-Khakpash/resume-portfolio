@@ -45,24 +45,31 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
             /*default values*/
             $unique_id          = esc_attr( $instance[ 'unique_id' ] );
             $title              = esc_attr( $instance[ 'title' ] );
-            $sub_title          = esc_textarea( $instance['sub_title'] );
-            $duration          = esc_textarea( $instance['duration'] );
-            $some_content       = esc_textarea( $instance['some_content'] );
-            $featured_image     = esc_url( $instance[ 'featured_image' ] );
-            $button_one_text    = esc_attr( $instance[ 'button_one_text' ] );
-            $button_one_url     = esc_url( $instance[ 'button_one_url' ] );
-            $button_two_text    = esc_attr( $instance[ 'button_two_text' ] );
-            $button_two_url     = esc_url( $instance[ 'button_two_url' ] );
 
             //fields for reapeter fields for testing
-	        $id = esc_attr( $instance[ 'id' ] );
-	        $name = esc_attr( $instance[ 'name' ] );
+	        $subject_1 = esc_attr( $instance[ 'subject_1' ] );
+            $desc_1    = esc_textarea( $instance['desc_1'] );
+            $date_1 = esc_attr( $instance[ 'date_1' ] );
+            $url_1     = esc_url( $instance[ 'url_1' ] );
+	        $github_url_1     = esc_url( $instance[ 'github_url_1' ] );
 
-	        $id_2 = esc_attr( $instance[ 'id_2' ] );
-	        $name_2 = esc_attr( $instance[ 'name_2' ] );
+            $subject_2 = esc_attr( $instance[ 'subject_2' ] );
+            $desc_2    = esc_textarea( $instance['desc_2'] );
+            $date_2 = esc_attr( $instance[ 'date_2' ] );
+            $url_2    = esc_url( $instance[ 'url_2' ] );
+	        $github_url_2     = esc_url( $instance[ 'github_url_2' ] );
 
-	        $test = $instance['test'] = 2;
-	        $ass ='ass';
+            $subject_3 = esc_attr( $instance[ 'subject_3' ] );
+            $desc_3    = esc_textarea( $instance['desc_3'] );
+            $date_3 = esc_attr( $instance[ 'date_3' ] );
+            $url_3    = esc_url( $instance[ 'url_3' ] );
+	        $github_url_3     = esc_url( $instance[ 'github_url_3' ] );
+
+            $subject_4 = esc_attr( $instance[ 'subject_4' ] );
+            $desc_4    = esc_textarea( $instance['desc_4'] );
+            $date_4 = esc_attr( $instance[ 'date_4' ] );
+            $url_4    = esc_url( $instance[ 'url_4' ] );
+	        $github_url_4     = esc_url( $instance[ 'github_url_4' ] );
 
             ?>
             <p>
@@ -71,103 +78,108 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
                 <br />
                 <small><?php esc_html_e('Enter a Unique Section ID. You can use this ID in Menu item for enabling One Page Menu.','portfolio-web')?></small>
             </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Project Title', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" />
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'sub_title' ); ?>"><?php _e( 'Short Description', 'portfolio-web' ); ?>:</label>
-                <textarea class="widefat" rows="5" cols="15" id="<?php echo $this->get_field_id( 'sub_title' ); ?>" name="<?php echo $this->get_field_name( 'sub_title' ); ?>"><?php echo $sub_title; ?></textarea>
-            </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'duration' ); ?>"><?php esc_html_e( 'Project Duration', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'duration' ); ?>" name="<?php echo $this->get_field_name( 'duration' ); ?>" type="text" value="<?php echo $duration; ?>" />
-            </p>
-
-
-            <label><?php esc_html_e( 'Add Reapeter Fields', 'portfolio-web' ); ?></label>
-            <br/>
-            <small><?php esc_html_e( 'Add Reapeter Fields For Testing.', 'portfolio-web' ); ?></small>
+            <br>
 
             <p>
-                <label for="<?php echo $this->get_field_id( 'id' ); ?>"><?php esc_html_e( 'ID', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'id' ); ?>" name="<?php echo $this->get_field_name( 'id' ); ?>" type="text" value="<?php echo $id; ?>" />
-                <br />
+                <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo $title; ?>"/>
             </p>
-            <p>
-                <label for="<?php echo $this->get_field_id( 'name' ); ?>"><?php esc_html_e( 'Name', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'name' ); ?>" name="<?php echo $this->get_field_name( 'name' ); ?>" type="text" value="<?php echo $name; ?>" />
-            </p>
+            <br>
 
 
             <p>
-                <label for="<?php echo $this->get_field_id( 'id_2' ); ?>"><?php esc_html_e( 'ID_2', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'id_2' ); ?>" name="<?php echo $this->get_field_name( 'id_2' ); ?>" type="text" value="<?php echo $id_2; ?>" />
-                <br />
+                <label for="<?php echo $this->get_field_id( 'subject_1' ); ?>"><?php esc_html_e( 'Project_1 Subject', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'subject_1' ); ?>" name="<?php echo $this->get_field_name( 'subject_1' ); ?>" type="text" value="<?php echo $subject_1; ?>" />
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id( 'name_2' ); ?>"><?php esc_html_e( 'Name_2', 'portfolio-web' ); ?></label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'name_2' ); ?>" name="<?php echo $this->get_field_name( 'name_2' ); ?>" type="text" value="<?php echo $name_2; ?>" />
+                <label for="<?php echo $this->get_field_id( 'desc_1' ); ?>"><?php _e( 'Short Description_1', 'portfolio-web' ); ?>:</label>
+                <textarea class="widefat" rows="5" cols="15" id="<?php echo $this->get_field_id( 'desc_1' ); ?>" name="<?php echo $this->get_field_name( 'desc_1' ); ?>"><?php echo $desc_1; ?></textarea>
             </p>
             <p>
-                <label for="<?php echo $this->get_field_id( 'test' ); ?>"> </label>
-                <input class="widefat" id="<?php echo $this->get_field_id( 'test' ); ?>" name="<?php echo $this->get_field_name( 'test' ); ?>" type="hidden" value="50" />
+                <label for="<?php echo $this->get_field_id( 'date_1' ); ?>"><?php esc_html_e( 'Project Date_1', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'date_1' ); ?>" name="<?php echo $this->get_field_name( 'date_1' ); ?>" type="text" value="<?php echo $date_1; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'url_1' ); ?>"><?php esc_html_e( 'Button Link Url_1', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'url_1' ); ?>" name="<?php echo $this->get_field_name( 'url_1' ); ?>" type="text" value="<?php echo $url_1; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'github_url_1' ); ?>"><?php esc_html_e( 'Github Link Url_1', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'github_url_1' ); ?>" name="<?php echo $this->get_field_name( 'github_url_1' ); ?>" type="text" value="<?php echo $github_url_1; ?>" />
             </p>
 
+            <br>
 
 
-            <div class="two">
-                <button type="button" class="name"  onclick="textBoxCreate(5)">Name</button>
-                <button type="button" class="email" onclick="emailBoxCreate()">Email</button>
-            </div>
-            <div class="third">
-                <form action="" id="mainform" method="get" name="mainform">
-                    <p id="myForm"></p><input type="submit" value="Submit">
-                </form>
-            </div>
 
-            <script type="text/javascript">
-                // FormGet Online Form Builder JS Code
-                // Creating and Adding Dynamic Form Elements.
-                var i = 1; // Global Variable for Name
-                var j = 1; // Global Variable for E-mail
-                var ass = <?php echo json_encode($instance) ?>;
+            <p>
+                <label for="<?php echo $this->get_field_id( 'subject_2' ); ?>"><?php esc_html_e( 'Project Subject_2', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'subject_2' ); ?>" name="<?php echo $this->get_field_name( 'subject_2' ); ?>" type="text" value="<?php echo $subject_2; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'desc_2' ); ?>"><?php _e( 'Short Description_2', 'portfolio-web' ); ?>:</label>
+                <textarea class="widefat" rows="5" cols="15" id="<?php echo $this->get_field_id( 'desc_2' ); ?>" name="<?php echo $this->get_field_name( 'desc_2' ); ?>"><?php echo $desc_2; ?></textarea>
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'date_2' ); ?>"><?php esc_html_e( 'Project Date_2', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'date_2' ); ?>" name="<?php echo $this->get_field_name( 'date_2' ); ?>" type="text" value="<?php echo $date_2; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'url_2' ); ?>"><?php esc_html_e( 'Button Link Url_2', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'url_2' ); ?>" name="<?php echo $this->get_field_name( 'url_2' ); ?>" type="text" value="<?php echo $url_2; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'github_url_2' ); ?>"><?php esc_html_e( 'Github Link Url_2', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'github_url_2' ); ?>" name="<?php echo $this->get_field_name( 'github_url_2' ); ?>" type="text" value="<?php echo $github_url_2; ?>" />
+            </p>
+            <br>
 
-                /*
-				=================
-				Creating Text Box for name field in the Form.
-				=================
-				*/
-                function textBoxCreate(limit){
-                    if(i< limit) {
-                        var y = document.createElement("INPUT");
-                        y.setAttribute("type", "text");
-                        y.setAttribute("Placeholder", "Name_" + i);
-                        y.setAttribute("Name", "Name_" + i);
-                        y.setAttribute("value",  i);
-                        document.getElementById("myForm").appendChild(y);
-<!--                        --><?php //$instance['js'.i] =  ?>
-                        i++;
-                        console.log(ass);
-                    }
-                }
-                /*
-				=================
-				Creating Text Box for email field in the Form.
-				=================
-				*/
-                function emailBoxCreate(){
-                    var y = document.createElement("INPUT");
-                    var t = document.createTextNode("Email");
-                    y.appendChild(t);
-                    y.setAttribute("Placeholder", "Email_" + j);
-                    y.setAttribute("Name", "Email_" + j);
-                    document.getElementById("myForm").appendChild(y);
-                    j++;
-                }
 
-            </script>
 
+            <p>
+                <label for="<?php echo $this->get_field_id( 'subject_3' ); ?>"><?php esc_html_e( 'Project Subject_3', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'subject_3' ); ?>" name="<?php echo $this->get_field_name( 'subject_3' ); ?>" type="text" value="<?php echo $subject_3; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'desc_3' ); ?>"><?php _e( 'Short Description_3', 'portfolio-web' ); ?>:</label>
+                <textarea class="widefat" rows="5" cols="15" id="<?php echo $this->get_field_id( '$desc_3' ); ?>" name="<?php echo $this->get_field_name( 'desc_3' ); ?>"><?php echo $desc_3; ?></textarea>
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'date_3' ); ?>"><?php esc_html_e( 'Project Date_3', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'date_3' ); ?>" name="<?php echo $this->get_field_name( 'date_3' ); ?>" type="text" value="<?php echo $date_3; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'url_3' ); ?>"><?php esc_html_e( 'Button Link Url_3', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'url_3' ); ?>" name="<?php echo $this->get_field_name( 'url_3' ); ?>" type="text" value="<?php echo $url_3; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'github_url_3' ); ?>"><?php esc_html_e( 'Github Link Url_3', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'github_url_3' ); ?>" name="<?php echo $this->get_field_name( 'github_url_3' ); ?>" type="text" value="<?php echo $github_url_3; ?>" />
+            </p>
+            <br>
+
+
+            <p>
+                <label for="<?php echo $this->get_field_id( 'subject_4' ); ?>"><?php esc_html_e( 'Project Subject_4', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'subject_4' ); ?>" name="<?php echo $this->get_field_name( 'subject_4' ); ?>" type="text" value="<?php echo $subject_4; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'desc_4' ); ?>"><?php _e( 'Short Description_4', 'portfolio-web' ); ?>:</label>
+                <textarea class="widefat" rows="5" cols="15" id="<?php echo $this->get_field_id( '$desc_4' ); ?>" name="<?php echo $this->get_field_name( 'desc_4' ); ?>"><?php echo $desc_4; ?></textarea>
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'date_4' ); ?>"><?php esc_html_e( 'Project Date_4', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'date_4' ); ?>" name="<?php echo $this->get_field_name( 'date_4' ); ?>" type="text" value="<?php echo $date_4; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'url_4' ); ?>"><?php esc_html_e( 'Button Link Url_4', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'url_4' ); ?>" name="<?php echo $this->get_field_name( 'url_4' ); ?>" type="text" value="<?php echo $url_4; ?>" />
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id( 'github_url_4' ); ?>"><?php esc_html_e( 'Github Link Url_4', 'portfolio-web' ); ?></label>
+                <input class="widefat" id="<?php echo $this->get_field_id( 'github_url_4' ); ?>" name="<?php echo $this->get_field_name( 'github_url_4' ); ?>" type="text" value="<?php echo $github_url_4; ?>" />
+            </p>
+            <br>
 
 
 	        <?php
@@ -188,50 +200,67 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
         public function update( $new_instance, $old_instance ) {
             $instance = $old_instance;
             $instance[ 'unique_id' ]            = sanitize_key( $new_instance[ 'unique_id' ] );
-            $instance[ 'title' ]                = $new_instance[ 'title' ] ;
-
-	        $instance[ 'test' ] = $new_instance[ 'test' ] ;
-
-
-            $instance['add'] = array(
-                    'id' => $instance[ 'title' ]
-            );
-
-
-
-            if ( current_user_can('unfiltered_html') ){
-                $instance['sub_title'] =  $new_instance['sub_title'];
-                $instance['duration'] =  $new_instance['duration'];
-            }
-            else{
-                $instance['sub_title'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['sub_title'] ) ) );
-                $instance['duration'] = stripslashes( wp_filter_post_kses( addslashes( $new_instance['duration'] ) ) );
-
-            }
-
-            $instance['featured_image']       = ( isset( $new_instance['featured_image'] ) ) ?  esc_url_raw( $new_instance['featured_image'] ): '';
-
-            $instance[ 'button_one_text' ]      = sanitize_text_field( $new_instance[ 'button_one_text' ] );
-            $instance[ 'button_one_url' ]       = esc_url_raw( $new_instance[ 'button_one_url' ] );
-            $instance[ 'button_two_text' ]      = sanitize_text_field( $new_instance[ 'button_two_text' ] );
-            $instance[ 'button_two_url' ]       = esc_url_raw( $new_instance[ 'button_two_url' ] );
+	        $instance['title']         = sanitize_text_field( $new_instance['title'] );
 
             //reapeted fields for testing
-	        $instance[ 'id' ] = $new_instance[ 'id' ] ;
-	        $instance[ 'name' ] = $new_instance[ 'name' ] ;
-	        $instance[ 'id_2' ] = $new_instance[ 'id_2' ] ;
-	        $instance[ 'name_2' ] = $new_instance[ 'name_2' ] ;
+	        $instance[ 'subject_1' ] = $new_instance[ 'subject_1' ] ;
+            $instance[ 'desc_1' ] = $new_instance[ 'desc_1' ] ;
+            $instance[ 'date_1' ] = $new_instance[ 'date_1' ] ;
+            $instance[ 'url_1' ] = $new_instance[ 'url_1' ] ;
+	        $instance[ 'github_url_1' ] = $new_instance[ 'github_url_1' ] ;
+
+            $instance[ 'subject_2' ] = $new_instance[ 'subject_2' ] ;
+            $instance[ 'desc_2' ] = $new_instance[ 'desc_2' ] ;
+            $instance[ 'date_2' ] = $new_instance[ 'date_2' ] ;
+            $instance[ 'url_2' ] = $new_instance[ 'url_2' ] ;
+	        $instance[ 'github_url_2' ] = $new_instance[ 'github_url_2' ] ;
+
+            $instance[ 'subject_3' ] = $new_instance[ 'subject_3' ] ;
+            $instance[ 'desc_3' ] = $new_instance[ 'desc_3' ] ;
+            $instance[ 'date_3' ] = $new_instance[ 'date_3' ] ;
+            $instance[ 'url_3' ] = $new_instance[ 'url_3' ] ;
+	        $instance[ 'github_url_3' ] = $new_instance[ 'github_url_3' ] ;
+
+            $instance[ 'subject_4' ] = $new_instance[ 'subject_4' ] ;
+            $instance[ 'desc_4' ] = $new_instance[ 'desc_4' ] ;
+            $instance[ 'date_4' ] = $new_instance[ 'date_4' ] ;
+            $instance[ 'url_4' ] = $new_instance[ 'url_4' ] ;
+	        $instance[ 'github_url_4' ] = $new_instance[ 'github_url_4' ] ;
+
 
 	        $instance['all'] = array(
-	                'id-1' => array(
-	                        'id' => $instance[ 'id' ],
-                            'name' => $instance[ 'name' ]
-            ),
+	                '1' => array(
+                            'subject' => $instance[ 'subject_1' ] ,
+                            'desc' => $instance['desc_1'],
+                            'date' => $instance['date_1'],
+                            'url' => $instance['url_1'],
+                            'github_url' => $instance['github_url_1']
+                     ),
 
-	                'id-2' => array(
-		                'id' => $instance[ 'id_2' ],
-		                'name' => $instance[ 'name_2' ]
-	                ),
+                     '2' => array(
+                        'subject' => $instance[ 'subject_2' ] ,
+                        'desc' => $instance['desc_2'],
+                        'date' => $instance['date_2'],
+                        'url' => $instance['url_2'],
+                        'github_url' => $instance['github_url_2']
+                    ),
+
+                    '3' => array(
+                        'subject' => $instance[ 'subject_3' ] ,
+                        'desc' => $instance['desc_3'],
+                        'date' => $instance['date_3'],
+                        'url' => $instance['url_3'],
+                        'github_url' => $instance['github_url_3']
+                    ),
+
+                    '4' => array(
+                        'subject' => $instance[ 'subject_4' ] ,
+                        'desc' => $instance['desc_4'],
+                        'date' => $instance['date_4'],
+                        'url' => $instance['url_4'],
+                        'github_url' => $instance['github_url_4']
+                    ),
+
 	        );
 
             return $instance;
@@ -261,118 +290,76 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
             $animation = "init-animate zoomIn";
             $instance['new'] = 'new';
 
-            echo $args['before_widget'];
+	        $div_attr = 'class="row featured-entries-col featured-entries-logo"';
+	        $portfolio_web_list_classes = 'single-list col-sm-3 col-md-3';
+
+
+	        echo $args['before_widget'];
             ?>
 
 
-            <section id="<?php echo esc_attr( $unique_id ); ?>" class="at-widgets acme-col-posts <?php ?>">
+            <section id="<?php echo esc_attr( $unique_id ); ?>" class="at-widgets acme-services" style="background-color: darkgray">
                 <div class="container">
-                    <div style="text-align: center">sdsdsdds</div>
-                    <?php
-                    $div_attr = 'class="featured-entries-col"';
-                    ?>
+
+			        <?php
+			        if( ! empty( $title ) ){
+				        echo "<div class='at-widget-title-wrapper ".$animation."'>";
+				        if ( ! empty( $title ) ) {
+					        echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+				        }
+				        echo "</div>";
+			        }
+			        ?>
                     <div <?php echo $div_attr;?>>
-                        <?php
-                        $portfolio_web_featured_index = 1;
-                            $portfolio_web_list_classes = 'single-list';
-                            if( 1 != $portfolio_web_featured_index && $portfolio_web_featured_index % $column_number == 1 ){
-                                echo "<div class='clearfix'></div>";
-                            }
-                            if( 1 == $column_number ){
-                                $portfolio_web_list_classes .= " col-sm-12";
-                            }
-                            elseif( 2 == $column_number ){
-                                $portfolio_web_list_classes .= " col-sm-6";
-                            }
-                            elseif( 3 == $column_number ){
-                                $portfolio_web_list_classes .= " col-sm-4 col-md-4";
-                            }
-                            else{
-                                $portfolio_web_list_classes .= " col-sm-3 col-md-3";
-                            }
-                            ?>
-                            <div class="<?php echo esc_attr( $portfolio_web_list_classes ); ?>">
-                                <article id="post-<?php the_ID(); ?>" <?php post_class( $animation ); ?>>
-                                    <div class="content-wrapper">
-                                        <div class="image-wrap">
-                                            <?php
-                                            $no_blog_image ='';
-                                            if ( has_post_thumbnail() ) {
-                                                ?>
-                                                <!--post thumbnail options-->
-                                                <div class="post-thumb">
-                                                    <?php
-                                                    echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
+				        <?php
+                            foreach($instance['all'] as $key => $value) {
+	                            ?>
 
-                                                    echo '</a>';
-                                                    ?>
+                                <div class="<?php echo esc_attr( $portfolio_web_list_classes ); ?> column"">
+                                        <div class="single-item <?php echo esc_attr( $animation ); ?>" style="padding-top:1px !important;"
 
-                                                </div><!-- .post-thumb-->
-                                                <?php
-                                            }
-                                            else{
-                                                $no_blog_image = 'no-image';
-                                            }
-                                            ?>
-                                        </div>
-                                        <div class="entry-content <?php echo $no_blog_image?>">
-                                            <div class="entry-header-title">
-                                                <header class="entry-header">
-                                                                                                       </div>-->
-                                                </header>
-                                                <h3 class="entry-title">
-                                                    <?php
-                                                    echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
-                                                    echo 'sdsd';
-                                                    echo '</a>';
-                                                    ?>
-                                                </h3>
+                                        >
+                                            <h3 class="title">
+			                                    <?php
+			                                    echo '<a href="'.$value['url'].'" class="all-link">';
+			                                    echo $value['subject'];
+			                                    echo '</a>';
+			                                    ?>
+                                            </h3>
+                                            <div class="content">
+                                                <div class="details">
+				                                    <?php echo $value['desc']; ?>
+                                                </div>
+                                            </div>
+
+<!--                                            <div class="project-date" style="margin-top:15%; border-top:solid 0.01mm gray;">-->
+<!--                                                <span style="position: relative;top:5px;">Duration: --><?php //echo $value['date'] ?><!--</span>-->
+<!---->
+<!--                                            </div>-->
+
+                                            <div class="project-date" style="margin-top:15%; border-top:solid 0.01mm gray;">
+                                                <a href="<?php echo $value['github_url'] ?>" style="">
+                                                    <i style="font-size:25px;" class="fa fa-github"><span style="font-size:15px;position: relative;top:-3px;left:2px">View on Github</span></i>
+                                                </a>
 
                                             </div>
-                                            <?php
-                                                ?>
-                                                <div class="details">
-                                                    <?php
-                                                      var_dump($instance);
-                                                      echo count($instance['all']);
-                                                      //echo json_encode($_REQUEST);
-                                                    ?>
-                                                </div>
-                                                <?php
-                                            ?>
-                                            <!--                                                <div class="date">-->
-                                            <!--                                                    <a href="--><?php //the_permalink(); ?><!--">-->
-                                            <!--                                                        <i class="fa fa-calendar-check-o" aria-hidden="true"></i>-->
-                                            <!--                                                        <span class="day-month">-->
-                                            <!--                                                            <span class="day">-->
-                                            <!--                                                                --><?php //echo esc_html( get_the_date('j') ); ?>
-                                            <!--                                                            </span>-->
-                                            <!--                                                        </span>-->
-                                            <!--                                                        <span class="month">-->
-                                            <!--                                                            --><?php //echo esc_html( get_the_date('F') ).','; ?>
-                                            <!--                                                        </span>-->
-                                            <!--                                                        <span class="year">-->
-                                            <!--                                                            --><?php //echo esc_html( get_the_date('Y') ); ?>
-                                            <!--                                                        </span>-->
-                                            <!--                                                    </a>-->
-                                            <!--                                                </div>-->
-                                            <?php
-                                            if( !empty( $portfolio_web_read_more_text ) ){
-                                                echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
-                                                echo esc_html( $portfolio_web_read_more_text );
-                                                echo '</a>';
-                                            }
-                                            ?>
-                                        </div><!-- .entry-content -->
-                                    </div>
-                                </article><!-- #post-## -->
-                            </div><!--dynamic css-->
-                    </div><!--featured entries-col-->
-                </div>
+                                        </div>
+                                </div>
+
+                            <?php
+                            }
+                           ?>
+
+                    </div><!--row-->
+                </div><!--cointainer-->
             </section>
 
 
-            <?php
+
+
+
+
+	        <?php
             echo $args['after_widget'];
         }
     } // Class Portfolio_Web_About ends here

@@ -48,16 +48,16 @@ if ( !function_exists('portfolio_web_default_slider') ) :
         $animation1 = 'init-animate';
         $animation2 = 'init-animate';
         ?>
-        <div class="image-slider-wrapper home-fullscreen ">
+        <div class="image-slider-wrapper home-fullscreen " >
             <div class="featured-slider">
-                <div class="item" style="<?php echo $bg_image_style; ?>">
+                <div class="item" style="background-color: ">
                     <div class="slider-content <?php echo $text_align;?>">
                         <div class="container">
                             <div class="banner-title <?php echo $animation1;?>">
-                                <?php esc_html_e('Lorem ipsum','portfolio-web' );?>
+                                <?php esc_html_e('Ali Khakpash','portfolio-web' );?>
                             </div>
                             <div class="image-slider-caption <?php echo $animation2;?>">
-                                <p><?php esc_html_e('Web Developer','portfolio-web' );?></p>
+                                <p><?php esc_html_e('Senior Web Developer','portfolio-web' );?></p>
                             </div>
                         </div>
                     </div>

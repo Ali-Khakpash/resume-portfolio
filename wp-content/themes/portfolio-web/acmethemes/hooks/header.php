@@ -262,7 +262,7 @@ if ( ! function_exists( 'portfolio_web_header' ) ) :
                         </span>
                     </a>
 	                <?php
-	                 portfolio_web_primary_menu();
+	                 //portfolio_web_primary_menu();
 	                ?>
                 </div>
                 <!--.at-beside-navbar-header-->
