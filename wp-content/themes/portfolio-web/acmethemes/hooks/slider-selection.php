@@ -50,7 +50,9 @@ if ( !function_exists('portfolio_web_default_slider') ) :
         ?>
         <div class="image-slider-wrapper home-fullscreen " >
             <div class="featured-slider">
-                <div class="item" style="background-color: ">
+                <div class="item"
+                     style="background-image: url(http://localhost/resume-portfolio/wp-content/uploads/2020/02/end.jpg);
+                            background-repeat: no-repeat;background-size: cover">
                     <div class="slider-content <?php echo $text_align;?>">
                         <div class="container">
                             <div class="banner-title <?php echo $animation1;?>">
@@ -59,6 +61,12 @@ if ( !function_exists('portfolio_web_default_slider') ) :
                             <div class="image-slider-caption <?php echo $animation2;?>">
                                 <p><?php esc_html_e('Senior Web Developer','portfolio-web' );?></p>
                             </div>
+                            <a href="#" class="init-animate fadeInDown btn btn-primary btn-reverse outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;" tabindex="0">
+                                Download Resume                                             <i class="fa fa-angle-right"></i>
+                            </a>
+                            <a href="#portfolio_web_projects-7" class="init-animate fadeInDown btn btn-primary outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;" tabindex="0">
+                                View Projects <i class="fa fa-angle-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>

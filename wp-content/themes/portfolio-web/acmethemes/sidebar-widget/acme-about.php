@@ -182,7 +182,7 @@ if ( ! class_exists( 'Portfolio_Web_About' ) ) {
                         if ( !empty( $featured_image ) ) {
 	                        $col = "col-sm-6";
 	                        ?>
-                            <div style="float: right !important;" class="<?php echo $col.' '.$animation;?>">
+                            <div style="" class="<?php echo $col.' '.$animation;?>">
                                 <div class="at-feature-about-img">
                                     <img src="<?php echo $featured_image;?>">
                                 </div>

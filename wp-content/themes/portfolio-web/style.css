@@ -1756,7 +1756,6 @@ div.wpforms-container-full .wpforms-form textarea.wpforms-field-medium {
 	float: right;
 }
 .image-slider-wrapper .slick-slide .slider-content .container {
-	display: none;
 }
 .image-slider-wrapper .slick-slide.slick-active .slider-content .container{
 	display: block;
