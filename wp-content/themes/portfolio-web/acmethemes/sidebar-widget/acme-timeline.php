@@ -70,6 +70,12 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 						$repeater_timeline_title_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'timeline_title';
 						$repeater_timeline_title_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'timeline_title'.']';
 
+						$repeater_timeline_companyName_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'companyName';
+						$repeater_timeline_companyName_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'companyName'.']';
+
+						$repeater_timeline_location_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'location';
+						$repeater_timeline_location_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'location'.']';
+
 						$repeater_timeline_duration_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'duration';
 						$repeater_timeline_duration_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'duration'.']';
 
@@ -119,6 +125,14 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
                                     <input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_title_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_title_id ); ?>" value="<?php echo esc_attr( $timeline_detail['timeline_title'] ); ?>" />
                                 </p>
                                 <p>
+                                    <label><?php esc_html_e( 'Enter Timeline Company Name', 'portfolio-web' ); ?></label>
+                                    <input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_companyName_name); ?>" id="<?php echo esc_attr( $repeater_timeline_companyName_id ); ?>" value="<?php echo esc_attr( $timeline_detail['companyName'] ); ?>" />
+                                </p>
+                                <p>
+                                    <label><?php esc_html_e( 'Enter Timeline Location', 'portfolio-web' ); ?></label>
+                                    <input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_location_name); ?>" id="<?php echo esc_attr( $repeater_timeline_location_id ); ?>" value="<?php echo esc_attr( $timeline_detail['location'] ); ?>" />
+                                </p>
+                                <p>
                                     <label><?php esc_html_e( 'Enter Timeline Date (Duration)', 'portfolio-web' ); ?></label>
                                     <input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_duration_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_duration_id ); ?>" value="<?php echo esc_attr( $timeline_detail['duration'] ); ?>" />
                                 </p>
@@ -141,7 +155,13 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 
 				$repeater_timeline_page_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'page_id';
 				$repeater_timeline_page_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'page_id'.']';
-				
+
+				$repeater_timeline_location_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'location';
+				$repeater_timeline_location_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'location'.']';
+
+				$repeater_timeline_companyName_id = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'companyName';
+				$repeater_timeline_companyName_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'companyName'.']';
+
 				$repeater_timeline_title_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'timeline_title';
 				$repeater_timeline_title_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'timeline_title'.']';
 
@@ -181,6 +201,14 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
                             <p>
                                 <label><?php esc_html_e( 'Enter Timeline Title', 'portfolio-web' ); ?></label>
                                 <input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_title_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_title_id ); ?>" />
+                            </p>
+                            <p>
+                                <label><?php esc_html_e( 'Enter Timeline Company Name', 'portfolio-web' ); ?></label>
+                                <input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_companyName_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_companyName_id ); ?>" />
+                            </p>
+                            <p>
+                                <label><?php esc_html_e( 'Enter Timeline Location', 'portfolio-web' ); ?></label>
+                                <input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_location_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_location_id ); ?>" />
                             </p>
                             <p>
                                 <label><?php esc_html_e( 'Enter Timeline Date (Duration)', 'portfolio-web' ); ?></label>
@@ -337,6 +365,8 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 			                        $page_id = $timeline_details['page_id'];
 			                        $post_in[] = $page_id;
 			                        $menu_other_details[$page_id]['timeline_title'] = $timeline_details['timeline_title'];
+			                        $menu_other_details[$page_id]['companyName'] = $timeline_details['companyName'];
+			                        $menu_other_details[$page_id]['location'] = $timeline_details['location'];
 			                        $menu_other_details[$page_id]['duration'] = $timeline_details['duration'];
 			                        $menu_other_details[$page_id]['timeline_link'] = $timeline_details['timeline_link'];
 		                        }
@@ -358,6 +388,8 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 
 		                        while( $timeline_query->have_posts() ):$timeline_query->the_post();
 			                        $timeline_title  = $menu_other_details[get_the_ID()]['timeline_title'];
+			                        $companyName  = $menu_other_details[get_the_ID()]['companyName'];
+			                        $location  = $menu_other_details[get_the_ID()]['location'];
 			                        $duration  = $menu_other_details[get_the_ID()]['duration'];
 			                        $timeline_link  = $menu_other_details[get_the_ID()]['timeline_link'];
 
@@ -382,19 +414,28 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
                                                     echo "<a href='".$timeline_link."'>";
                                                 }
                                                 the_title();
+
                                                 if( !empty( $timeline_link ) ){
                                                     echo "</a>";
                                                 }
 
                                                 ?>
                                             </h3>
+                                            <h4 style="color: #008CFF"><?php echo $companyName ?></h4>
+                                            <div>
+                                               <span> <i class="fa fa-calendar">  <?php echo $duration?></i></span>
+                                                <span class="" style="margin-left: 10px;">
+                                                    <i class="fa fa-map-marker">  <?php echo $location?></i>
+                                                </span>
+                                            </div>
                                             <?php
                                             if( 0 != $content_number ){
                                                 ?>
                                                 <div class="timeline-content">
 			                                        <?php
-			                                        portfolio_web_advanced_content( $content_number, $content_from );
+			                                        //portfolio_web_advanced_content( $content_number, $content_from );
 			                                        ?>
+
                                                 </div><!--.timeline-content-->
 		                                        <?php
 	                                        }
@@ -417,6 +458,13 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 	                        endif;
 	                        wp_reset_postdata();
                         endif;
+
+                        //dumping important variables
+//                       var_dump($at_all_timeline_items);
+                        echo '</br>';
+                        echo '</br>';
+                       print_r($post_in);
+                       var_dump($menu_other_details);
                         ?>
 		            </div><!--.at-timeline-section-->
             	</div><!--.container-->

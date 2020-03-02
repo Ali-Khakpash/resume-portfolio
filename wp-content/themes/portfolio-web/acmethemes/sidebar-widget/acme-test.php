@@ -298,7 +298,9 @@ if ( ! class_exists( 'Portfolio_Web_Projects' ) ) {
             ?>
 
 
-            <section id="<?php echo esc_attr( $unique_id ); ?>" class="at-widgets acme-services" style="background-color: darkgray">
+            <section id="<?php echo esc_attr( $unique_id ); ?>" class="at-widgets acme-services"
+                     style="background-image: url(http://localhost/resume-portfolio/wp-content/uploads/2020/01/officewallpaper.jpg);
+                            background-repeat: no-repeat;background-size: cover;background-position: center;">
                 <div class="container">
 
 			        <?php
