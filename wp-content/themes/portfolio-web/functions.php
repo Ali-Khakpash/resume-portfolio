@@ -15,6 +15,7 @@ require trailingslashit( get_template_directory() ).'acmethemes/init.php';
 
 //register a new widget class
 require portfolio_web_file_directory('acmethemes/sidebar-widget/acme-test.php');
+require portfolio_web_file_directory('acmethemes/sidebar-widget/acme-myProjects.php');
 
 
 // ------------------------------------------------------------------
