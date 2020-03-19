@@ -73,15 +73,6 @@ if ( ! class_exists( 'Portfolio_Web_My_Projects' ) ) {
 						$repeater_timeline_desc_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'desc';
 						$repeater_timeline_desc_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'desc'.']';
 
-						$repeater_timeline_location_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'location';
-						$repeater_timeline_location_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'location'.']';
-
-						$repeater_timeline_duration_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'duration';
-						$repeater_timeline_duration_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'duration'.']';
-
-						$repeater_timeline_link_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'timeline_link';
-						$repeater_timeline_link_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'timeline_link'.']';
-
 						$repeater_timeline_github_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'github';
 						$repeater_timeline_github_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'github'.']';
 						?>
@@ -130,18 +121,6 @@ if ( ! class_exists( 'Portfolio_Web_My_Projects' ) ) {
 									<label><?php esc_html_e( 'Enter Timeline Project Desc', 'portfolio-web' ); ?></label>
 									<input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_desc_name); ?>" id="<?php echo esc_attr( $repeater_timeline_desc_id ); ?>" value="<?php echo esc_attr( $timeline_detail['desc'] ); ?>" />
 								</p>
-								<p>
-									<label><?php esc_html_e( 'Enter Timeline Location', 'portfolio-web' ); ?></label>
-									<input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_location_name); ?>" id="<?php echo esc_attr( $repeater_timeline_location_id ); ?>" value="<?php echo esc_attr( $timeline_detail['location'] ); ?>" />
-								</p>
-								<p>
-									<label><?php esc_html_e( 'Enter Timeline Date (Duration)', 'portfolio-web' ); ?></label>
-									<input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_duration_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_duration_id ); ?>" value="<?php echo esc_attr( $timeline_detail['duration'] ); ?>" />
-								</p>
-								<p>
-									<label><?php esc_html_e( 'Enter Timeline Link', 'portfolio-web' ); ?></label>
-									<input type="url" class="widefat" name="<?php echo esc_attr( $repeater_timeline_link_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_link_id ); ?>" value="<?php echo esc_url( $timeline_detail['timeline_link'] ); ?>" />
-								</p>
 
 								<p>
 									<label><?php esc_html_e( 'Enter Timeline Project Github', 'portfolio-web' ); ?></label>
@@ -163,20 +142,11 @@ if ( ! class_exists( 'Portfolio_Web_My_Projects' ) ) {
 				$repeater_timeline_page_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'page_id';
 				$repeater_timeline_page_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'page_id'.']';
 
-				$repeater_timeline_location_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'location';
-				$repeater_timeline_location_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'location'.']';
-
 				$repeater_timeline_desc_id = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'desc';
 				$repeater_timeline_desc_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'desc'.']';
 
 				$repeater_timeline_title_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'timeline_title';
 				$repeater_timeline_title_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'timeline_title'.']';
-
-				$repeater_timeline_duration_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'duration';
-				$repeater_timeline_duration_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'duration'.']';
-
-				$repeater_timeline_link_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'timeline_link';
-				$repeater_timeline_link_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'timeline_link'.']';
 
 				$repeater_timeline_github_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'github';
 				$repeater_timeline_github_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'github'.']';
@@ -216,18 +186,6 @@ if ( ! class_exists( 'Portfolio_Web_My_Projects' ) ) {
 							<p>
 								<label><?php esc_html_e( 'Enter Timeline Project Desc', 'portfolio-web' ); ?></label>
 								<input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_desc_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_desc_id ); ?>" />
-							</p>
-							<p>
-								<label><?php esc_html_e( 'Enter Timeline Location', 'portfolio-web' ); ?></label>
-								<input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_location_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_location_id ); ?>" />
-							</p>
-							<p>
-								<label><?php esc_html_e( 'Enter Timeline Date (Duration)', 'portfolio-web' ); ?></label>
-								<input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_duration_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_duration_id ); ?>" />
-							</p>
-							<p>
-								<label><?php esc_html_e( 'Enter Timeline Link', 'portfolio-web' ); ?></label>
-								<input type="url" class="widefat" name="<?php echo esc_attr( $repeater_timeline_link_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_link_id ); ?>" />
 							</p>
 							<p>
 								<label><?php esc_html_e( 'Enter Timeline Github', 'portfolio-web' ); ?></label>
@@ -363,7 +321,9 @@ if ( ! class_exists( 'Portfolio_Web_My_Projects' ) ) {
 
 			$animation = "init-animate zoomIn";
 			?>
-			<section id="<?php echo esc_attr( $unique_id ); ?>" class="at-widgets acme-services">
+			<section id="<?php echo esc_attr( $unique_id ); ?>" class="at-widgets acme-services"
+                     style="background-image: url(http://localhost/resume-portfolio/wp-content/uploads/2020/01/officewallpaper.jpg);
+                            background-repeat: no-repeat;background-size: cover;background-position: center;">
 				<div class="container">
 					<?php
 					if( ! empty( $title ) ){
@@ -381,27 +341,24 @@ if ( ! class_exists( 'Portfolio_Web_My_Projects' ) ) {
 					foreach($at_all_timeline_items as $key => $value) {
 					?>
 
-					<div class="<?php echo esc_attr( $portfolio_web_list_classes ); ?> column"">
+					<div style="margin-bottom: 20px;" class="<?php echo esc_attr( $portfolio_web_list_classes ); ?> column"">
 					<div class="single-item <?php echo esc_attr( $animation ); ?>" style="padding-top:1px !important;"
 
 					>
 						<h3 class="title">
 							<?php
-							echo '<a href="'.$value['github'].'" class="all-link">';
+							echo '<a href="'.get_permalink($value['page_id']).'" class="all-link">';
 							echo $value['timeline_title'];
 							echo '</a>';
 							?>
 						</h3>
 						<div class="content">
-							<div class="details">
-								<?php echo $value['desc']; ?>
+							<div class="details" style="text-justify: auto">
+								<?php
+                                    echo $this->limit_string_lines($value['desc']);
+                                ?>
 							</div>
 						</div>
-
-						<!--                                            <div class="project-date" style="margin-top:15%; border-top:solid 0.01mm gray;">-->
-						<!--                                                <span style="position: relative;top:5px;">Duration: --><?php //echo $value['date'] ?><!--</span>-->
-						<!---->
-						<!--                                            </div>-->
 
 						<div class="project-date" style="margin-top:15%; border-top:solid 0.01mm gray;">
 							<a href="<?php echo $value['github'] ?>" style="">
@@ -410,6 +367,7 @@ if ( ! class_exists( 'Portfolio_Web_My_Projects' ) ) {
 
 						</div>
 					</div>
+
 				</div>
 
 				<?php
@@ -426,12 +384,32 @@ if ( ! class_exists( 'Portfolio_Web_My_Projects' ) ) {
 						echo '</br>';
 						//var_dump($at_all_timeline_items);
 					?>
-				</div><!--.container-->
 			</section><!--.at-timelime-->
 			<?php
 
 			echo $args['after_widget'];
 		}
+
+
+		public function limit_string_lines($str)
+        {
+	        $limitedStr = wordwrap($str,30,"<br>\n",false);
+	        $arr = explode("\n", $limitedStr);
+	        $newStr = "";
+	        if(count($arr) > 4) {
+		        $arr = array_splice( $arr, 0, 4 );
+		        foreach($arr as $line) { $newStr .= $line; }
+		        return $newStr;
+	        }
+	        else
+            {
+                return $newStr=$str;
+            }
+        }
+
+
+
+
 	} // Class Portfolio_Web_About ends here
 }
 

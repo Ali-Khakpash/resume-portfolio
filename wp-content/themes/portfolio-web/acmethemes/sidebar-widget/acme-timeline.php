@@ -79,6 +79,9 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 						$repeater_timeline_duration_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'duration';
 						$repeater_timeline_duration_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'duration'.']';
 
+						$repeater_timeline_desc_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'desc';
+						$repeater_timeline_desc_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'desc'.']';
+
 						$repeater_timeline_link_id  = $this->get_field_id( 'at_all_timeline_items') .$total_repeater.'timeline_link';
 						$repeater_timeline_link_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$total_repeater.']['.'timeline_link'.']';
 
@@ -137,6 +140,10 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
                                     <input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_duration_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_duration_id ); ?>" value="<?php echo esc_attr( $timeline_detail['duration'] ); ?>" />
                                 </p>
                                 <p>
+                                    <label><?php esc_html_e( 'Enter Timeline Desc', 'portfolio-web' ); ?></label>
+                                    <textarea style="height: 200px !important;" type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_desc_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_desc_id ); ?>" value="<?php echo esc_attr( $timeline_detail['desc'] ); ?>" > <?php echo esc_attr( $timeline_detail['desc'] ); ?> </textarea>
+                                </p>
+                                <p>
                                     <label><?php esc_html_e( 'Enter Timeline Link', 'portfolio-web' ); ?></label>
                                     <input type="url" class="widefat" name="<?php echo esc_attr( $repeater_timeline_link_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_link_id ); ?>" value="<?php echo esc_url( $timeline_detail['timeline_link'] ); ?>" />
                                 </p>
@@ -167,6 +174,9 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 
 				$repeater_timeline_duration_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'duration';
 				$repeater_timeline_duration_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'duration'.']';
+
+				$repeater_timeline_desc_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'desc';
+				$repeater_timeline_desc_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'desc'.']';
 
 				$repeater_timeline_link_id  = $this->get_field_id( 'at_all_timeline_items') .$coder_repeater_depth.'timeline_link';
 				$repeater_timeline_link_name  = $this->get_field_name( 'at_all_timeline_items' ).'['.$coder_repeater_depth.']['.'timeline_link'.']';
@@ -213,6 +223,10 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
                             <p>
                                 <label><?php esc_html_e( 'Enter Timeline Date (Duration)', 'portfolio-web' ); ?></label>
                                 <input type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_duration_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_duration_id ); ?>" />
+                            </p>
+                            <p>
+                                <label><?php esc_html_e( 'Enter Timeline Desc', 'portfolio-web' ); ?></label>
+                                <textarea style="height:200px;"  type="text" class="widefat" name="<?php echo esc_attr( $repeater_timeline_desc_name ); ?>" id="<?php echo esc_attr( $repeater_timeline_desc_id ); ?>" ></textarea>
                             </p>
                             <p>
                                 <label><?php esc_html_e( 'Enter Timeline Link', 'portfolio-web' ); ?></label>
@@ -368,6 +382,7 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 			                        $menu_other_details[$page_id]['companyName'] = $timeline_details['companyName'];
 			                        $menu_other_details[$page_id]['location'] = $timeline_details['location'];
 			                        $menu_other_details[$page_id]['duration'] = $timeline_details['duration'];
+			                        $menu_other_details[$page_id]['desc'] = $timeline_details['desc'];
 			                        $menu_other_details[$page_id]['timeline_link'] = $timeline_details['timeline_link'];
 		                        }
 	                        }
@@ -391,6 +406,7 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 			                        $companyName  = $menu_other_details[get_the_ID()]['companyName'];
 			                        $location  = $menu_other_details[get_the_ID()]['location'];
 			                        $duration  = $menu_other_details[get_the_ID()]['duration'];
+			                        $desc = $menu_other_details[get_the_ID()]['desc'];
 			                        $timeline_link  = $menu_other_details[get_the_ID()]['timeline_link'];
 
 			                        $current = '';
@@ -431,25 +447,25 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
                                             <?php
                                             if( 0 != $content_number ){
                                                 ?>
-                                                <div class="timeline-content">
-			                                        <?php
-			                                        //portfolio_web_advanced_content( $content_number, $content_from );
-			                                        ?>
+                                                <div class="timeline-content mt-2" >
+                                                  <?php
+                                                    echo $desc;
+                                                  ?>
 
                                                 </div><!--.timeline-content-->
 		                                        <?php
 	                                        }
 	                                        ?>
-                                            <span class="at-date">
-                                                <?php
-                                                if( !empty( $timeline_title )){
-	                                                echo '<strong>'.esc_html( $timeline_title ).'</strong>';
-                                                }
-                                                if( !empty( $duration )){
-	                                                echo esc_html( $duration );
-                                                }
-                                                ?>
-                                            </span><!--.at-date-->
+<!--                                            <span class="at-date">-->
+<!--                                                --><?php
+//                                                if( !empty( $timeline_title )){
+//	                                                echo '<strong>'.esc_html( $timeline_title ).'</strong>';
+//                                                }
+//                                                if( !empty( $duration )){
+//	                                                echo esc_html( $duration );
+//                                                }
+//                                                ?>
+<!--                                            </span>.at-date-->
                                         </div> <!-- at-timeline-content -->
                                     </div><!--.at-timeline-block-->
 			                        <?php
@@ -458,13 +474,6 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
 	                        endif;
 	                        wp_reset_postdata();
                         endif;
-
-                        //dumping important variables
-//                       var_dump($at_all_timeline_items);
-                        echo '</br>';
-                        echo '</br>';
-                       print_r($post_in);
-                       var_dump($menu_other_details);
                         ?>
 		            </div><!--.at-timeline-section-->
             	</div><!--.container-->
