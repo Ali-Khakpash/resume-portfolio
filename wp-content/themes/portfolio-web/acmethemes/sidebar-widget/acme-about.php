@@ -182,7 +182,7 @@ if ( ! class_exists( 'Portfolio_Web_About' ) ) {
                         if ( !empty( $featured_image ) ) {
 	                        $col = "col-sm-6";
 	                        ?>
-                            <div style="" class="<?php echo $col.' '.$animation;?>">
+                            <div style="display: none" class="<?php echo $col.' '.$animation;?>">
                                 <div class="at-feature-about-img">
                                     <img src="<?php echo $featured_image;?>">
                                 </div>
@@ -190,7 +190,7 @@ if ( ! class_exists( 'Portfolio_Web_About' ) ) {
                             <?php
                         }
                         ?>
-                        <div class="<?php echo $col;?>">
+                        <div class="<?php echo $col;?>" style="width: 80%">
                             <?php
                             if( ! empty( $title ) || !empty( $sub_title ) ){
 	                            echo "<div class='at-widget-title-wrapper ".$animation."'>";
@@ -204,7 +204,7 @@ if ( ! class_exists( 'Portfolio_Web_About' ) ) {
 	                            echo "</div>";
                             }
                             if( !empty( $some_content ) ){
-                                echo "<p class='$animation'>".$some_content."</p>";
+                                echo "<p class='$animation' style='margin-top: -40px;text-align: justify'>".$some_content."</p>";
                             }
 	                        if( !empty( $button_one_text ) ){
 		                        ?>

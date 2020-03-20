@@ -48,11 +48,10 @@ if ( !function_exists('portfolio_web_default_slider') ) :
         $animation1 = 'init-animate';
         $animation2 = 'init-animate';
         ?>
-        <div class="image-slider-wrapper home-fullscreen " >
+        <div class="image-slider-wrapper home-fullscreen "  style="height: 430px;background-image:url(http://localhost/resume-portfolio/wp-content/uploads/2020/03/final.jpg);background-repeat: no-repeat;background-size: contain">
             <div class="featured-slider">
-                <div class="item"
-                     style="background-image: url(http://localhost/resume-portfolio/wp-content/uploads/2020/02/end.jpg);
-                            background-repeat: no-repeat;background-size: cover">
+                <div class="item">
+<!--                    <img style="float: right;width:38%;margin-top:85px" src="http://localhost/resume-portfolio/wp-content/uploads/2020/03/final2.jpg">-->
                     <div class="slider-content <?php echo $text_align;?>">
                         <div class="container">
                             <div class="banner-title <?php echo $animation1;?>">
@@ -61,12 +60,14 @@ if ( !function_exists('portfolio_web_default_slider') ) :
                             <div class="image-slider-caption <?php echo $animation2;?>">
                                 <p><?php esc_html_e('Senior Web Developer','portfolio-web' );?></p>
                             </div>
-                            <a href="#" class="init-animate fadeInDown btn btn-primary btn-reverse outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;" tabindex="0">
-                                Download Resume                                             <i class="fa fa-angle-right"></i>
+                            <div class="" style="display: block;height: 200px" >
+                            <a href="#"  class="init-animate fadeInDown btn btn-primary btn-reverse outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;display: inline-block" tabindex="0">
+                                Download Resume <i class="fa fa-angle-right"></i>
                             </a>
-                            <a href="#portfolio_web_projects-7" class="init-animate fadeInDown btn btn-primary outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;" tabindex="0">
+                            <a href="#portfolio_web_my_projects-29" class="init-animate fadeInDown btn btn-primary outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;" tabindex="0">
                                 View Projects <i class="fa fa-angle-right"></i>
                             </a>
+                            </div>
                         </div>
                     </div>
                 </div>
