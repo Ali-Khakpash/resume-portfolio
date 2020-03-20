@@ -441,7 +441,11 @@ if ( ! class_exists( 'Portfolio_Web_Timeline' ) ) {
                                             <div>
                                                <span> <i class="fa fa-calendar">  <?php echo $duration?></i></span>
                                                 <span class="" style="margin-left: 10px;">
-                                                    <i class="fa fa-map-marker">  <?php echo $location?></i>
+                                                    <?php
+                                                    if(!empty($location)){
+                                                        echo "<i class='fa fa-map-marker'> ".$location."</i>";
+                                                    }
+                                                    ?>
                                                 </span>
                                             </div>
                                             <?php
