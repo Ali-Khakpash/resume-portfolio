@@ -39,6 +39,9 @@ define( 'DB_COLLATE', '' );
 
 define( 'WP_DEBUG', true );
 
+define( 'WP_HOME', 'http://localhost/resume-portfolio/' );
+define( 'WP_SITEURL', 'http://localhost/resume-portfolio/' );
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
