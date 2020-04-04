@@ -8,13 +8,13 @@ if ( !function_exists('portfolio_web_scroll_text') ) :
             <div class="scroll-box">
                 <span><?php
 	                if( !empty( $link ) ){
-	                    ?>
+	                ?>
                     <a href="<?php echo esc_url( $link ); ?>">
                         <?php
-	                }
-	                echo esc_html( $portfolio_web_customizer_all_values['portfolio-web-slider-scroll-text'] );
-	                if( !empty( $link ) ){
-	                    ?>
+                        }
+                        echo esc_html( $portfolio_web_customizer_all_values['portfolio-web-slider-scroll-text'] );
+                        if( !empty( $link ) ){
+                        ?>
                     </a>
                 <?php
                 }
@@ -22,8 +22,8 @@ if ( !function_exists('portfolio_web_scroll_text') ) :
                 </span>
             </div>
 			<?php
-        }
-    }
+		}
+	}
 endif;
 
 /**
@@ -36,45 +36,44 @@ endif;
  *
  */
 if ( !function_exists('portfolio_web_default_slider') ) :
-    function portfolio_web_default_slider(){
-        $bg_image_style = '';
-        if ( get_header_image() ) :
-            //$bg_image_style .= 'background-image:url(' . esc_url( get_header_image() ) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
-        else:
-            $bg_image_style .= 'background-image:url(' . esc_url( get_template_directory_uri()."/assets/img/default-image.jpg" ) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
-        endif; // End header image check.
+	function portfolio_web_default_slider(){
+		$bg_image_style = '';
+		if ( get_header_image() ) :
+			//$bg_image_style .= 'background-image:url(' . esc_url( get_header_image() ) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
+		else:
+			$bg_image_style .= 'background-image:url(' . esc_url( get_template_directory_uri()."/assets/img/default-image.jpg" ) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
+		endif; // End header image check.
 
-        $text_align = 'text-left';
-        $animation1 = 'init-animate';
-        $animation2 = 'init-animate';
-        ?>
-        <div class="image-slider-wrapper home-fullscreen "  style="height: 430px;background-image:url(http://localhost/resume-portfolio/wp-content/uploads/2020/03/final.jpg);background-repeat: no-repeat;background-size: contain">
+		$text_align = 'text-left';
+		$animation1 = 'init-animate';
+		$animation2 = 'init-animate';
+		?>
+        <div class="image-slider-wrapper home-fullscreen "  style="height: 430px;background-image:url(<?php echo get_template_directory_uri()."/assets/img/personal.jpg" ?>);background-repeat: no-repeat;background-size: contain">
             <div class="featured-slider">
                 <div class="item">
-<!--                    <img style="float: right;width:38%;margin-top:85px" src="http://localhost/resume-portfolio/wp-content/uploads/2020/03/final2.jpg">-->
                     <div class="slider-content <?php echo $text_align;?>">
                         <div class="container">
                             <div class="banner-title <?php echo $animation1;?>">
-                                <?php esc_html_e('Ali Khakpash','portfolio-web' );?>
+								<?php esc_html_e('Ali Khakpash','portfolio-web' );?>
                             </div>
                             <div class="image-slider-caption <?php echo $animation2;?>">
                                 <p><?php esc_html_e('Senior Web Developer','portfolio-web' );?></p>
                             </div>
                             <div class="" style="display: block;height: 200px" >
-                            <a href="#"  class="init-animate fadeInDown btn btn-primary btn-reverse outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;display: inline-block" tabindex="0">
-                                Download Resume <i class="fa fa-angle-right"></i>
-                            </a>
-                            <a href="#portfolio_web_my_projects-29" class="init-animate fadeInDown btn btn-primary outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;" tabindex="0">
-                                View Projects <i class="fa fa-angle-right"></i>
-                            </a>
+                                <a href="<?php echo get_template_directory_uri()."/assets/files/cv.pdf" ?>"  class="init-animate fadeInDown btn btn-primary btn-reverse outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;display: inline-block" tabindex="0">
+                                    Download Resume <i class="fa fa-angle-right"></i>
+                                </a>
+                                <a href="#portfolio_web_my_projects-29" class="init-animate fadeInDown btn btn-primary outline-outward banner-btn" style="visibility: visible; animation-name: fadeInDown;" tabindex="0">
+                                    View Projects <i class="fa fa-angle-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php
-    }
+		<?php
+	}
 endif;
 
 function portfolio_web_slider_from_page(){
@@ -208,13 +207,13 @@ function portfolio_web_slider_from_page(){
 						}
 					endwhile;
 
-                    ?>
+					?>
                 </div><!--acme slick carousel-->
             </div><!--.image slider wrapper-->
 			<?php
-            portfolio_web_scroll_text();
+			portfolio_web_scroll_text();
 
-            wp_reset_postdata();
+			wp_reset_postdata();
 		else:
 			portfolio_web_default_slider();
 		endif;
@@ -234,10 +233,10 @@ function portfolio_web_slider_from_page(){
 
 if ( ! function_exists( 'portfolio_web_feature_slider' ) ) :
 
-    function portfolio_web_feature_slider( ){
+	function portfolio_web_feature_slider( ){
 
-	    portfolio_web_slider_from_page();
+		portfolio_web_slider_from_page();
 
-}
+	}
 endif;
 add_action( 'portfolio_web_action_feature_slider', 'portfolio_web_feature_slider', 0 );

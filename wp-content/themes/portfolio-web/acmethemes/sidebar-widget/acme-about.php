@@ -28,14 +28,14 @@ if ( ! class_exists( 'Portfolio_Web_About' ) ) {
 
 		function __construct() {
 			parent::__construct(
-			        /*Base ID of your widget*/
-			        'portfolio_web_about',
-                    /*Widget name will appear in UI*/
-                    esc_html__( 'AT About Section', 'portfolio-web' ),
-                    /*Widget description*/
-                    array(
-                            'description' => esc_html__( 'Show About Section with image and description.', 'portfolio-web' )
-                    )
+			/*Base ID of your widget*/
+				'portfolio_web_about',
+				/*Widget name will appear in UI*/
+				esc_html__( 'AT About Section', 'portfolio-web' ),
+				/*Widget description*/
+				array(
+					'description' => esc_html__( 'Show About Section with image and description.', 'portfolio-web' )
+				)
 			);
 		}
 
@@ -177,55 +177,49 @@ if ( ! class_exists( 'Portfolio_Web_About' ) ) {
             <section id="<?php echo $unique_id;?>" class="at-widgets at-feature-about">
                 <div class="container">
                     <div class="row">
-                        <?php
-                        $col = "col-sm-12";
-                        if ( !empty( $featured_image ) ) {
-	                        $col = "col-sm-6";
-	                        ?>
+						<?php
+						$col = "col-sm-12";
+						if ( !empty( $featured_image ) ) {
+							$col = "col-sm-6";
+							?>
                             <div style="display: none" class="<?php echo $col.' '.$animation;?>">
                                 <div class="at-feature-about-img">
                                     <img src="<?php echo $featured_image;?>">
                                 </div>
                             </div>
-                            <?php
-                        }
-                        ?>
+							<?php
+						}
+						?>
                         <div class="<?php echo $col;?>" style="width: 80%">
-                            <?php
-                            if( ! empty( $title ) || !empty( $sub_title ) ){
-	                            echo "<div class='at-widget-title-wrapper ".$animation."'>";
-	                            if ( ! empty( $title ) ) {
-		                            echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
-	                            }
-	                            if( !empty( $sub_title ) ) { ?>
+							<?php
+							if( ! empty( $title ) || !empty( $sub_title ) ){
+								echo "<div class='at-widget-title-wrapper ".$animation."'>";
+								if ( ! empty( $title ) ) {
+									echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+								}
+								if( !empty( $sub_title ) ) { ?>
                                     <p class="at-subtitle"><?php echo wp_kses_post( $sub_title ); ?></p>
-		                            <?php
-	                            }
-	                            echo "</div>";
-                            }
-                            if( !empty( $some_content ) ){
-                                echo "<p class='$animation' style='margin-top: -40px;text-align: justify'>".$some_content."</p>";
-                            }
-	                        if( !empty( $button_one_text ) ){
-		                        ?>
-                                <a href="<?php echo $button_one_url; ?>" class="<?php echo $animation;?> btn btn-primary btn-reverse">
-			                        <?php echo $button_one_text;?>
+									<?php
+								}
+								echo "</div>";
+							}
+							if( !empty( $some_content ) ){
+								echo "<p class='$animation' style='margin-top: -40px;text-align: justify'>".$some_content."</p>";
+							}
+							if( !empty( $button_one_text ) ){
+								?>
+                                <a href="<?php echo get_template_directory_uri()."/assets/files/cv.pdf"?>" class="<?php echo $animation;?> btn btn-primary btn-reverse">
+									<?php echo $button_one_text;?>
                                 </a>
-		                        <?php
-	                        }
-	                        if( !empty( $button_two_text ) ){
-		                        ?>
-                                <a href="<?php echo $button_two_url; ?>" class="<?php echo $animation;?> btn btn-primary">
-			                        <?php echo $button_two_text;?>
-                                </a>
-		                        <?php
-	                        }
-	                        ?>
+								<?php
+							}
+
+							?>
                         </div>
                     </div>
                 </div>
             </section>
-            <?php
+			<?php
 			echo $args['after_widget'];
 		}
 	} // Class Portfolio_Web_About ends here

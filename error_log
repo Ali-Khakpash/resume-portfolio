@@ -1,0 +1,1 @@
+[04-Apr-2020 13:20:35 UTC] PHP Warning:  mysqli_real_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/alikgqcm/public_html/resume-portfolio/wp-includes/wp-db.php on line 1633

@@ -97,7 +97,7 @@ if ( ! class_exists( 'Portfolio_Web_Skills' ) ) {
 								$args = array(
 									'selected'          => $skills_detail['page_id'],
 									'name'              => $repeater_skills_page_name,
-                                    'id'                => $repeater_skills_page_id,
+									'id'                => $repeater_skills_page_id,
 									'class'             => 'widefat at-select',
 									'show_option_none'  => esc_html__( 'Select Page', 'portfolio-web'),
 									'option_none_value' => 0 // string
@@ -105,7 +105,7 @@ if ( ! class_exists( 'Portfolio_Web_Skills' ) ) {
 								wp_dropdown_pages( $args );
 								?>
                                 <div class="at-repeater-control-actions">
-                                   <?php
+									<?php
 									if( get_edit_post_link( $skills_detail['page_id'] ) ){
 										?>
                                         <a class="button button-link at-postid alignright" target="_blank" href="<?php echo esc_url( get_edit_post_link( $skills_detail['page_id'] ) ); ?>">
@@ -331,7 +331,7 @@ if ( ! class_exists( 'Portfolio_Web_Skills' ) ) {
 			$background_options     = esc_attr( $instance['background_options'] );
 			$bg_gray_class          = $background_options == 'gray'?'at-gray-bg ':' ';
 
-			$bg_image               = esc_url( $instance['bg_image'] );
+			$bg_image               = get_template_directory_uri()."/assets/img/officewallpaper.jpg";
 			$bg_image_style = '';
 			if ( !empty( $bg_image ) ) {
 				$bg_image_style .= 'background-image:url(' . $bg_image . ');background-repeat:no-repeat;background-size:cover;background-attachment:fixed;background-position: center;';
@@ -407,26 +407,26 @@ if ( ! class_exists( 'Portfolio_Web_Skills' ) ) {
                                             <span class="percent"><?php echo absint($skill_percentage); ?></span>
                                         </span>
                                         <h3 class="">
-                                            <?php
-                                            echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
-                                            the_title();
-                                            echo '</a>';
-                                            ?>
+											<?php
+											echo '<a href="'.esc_url(get_permalink()).'" class="all-link">';
+											the_title();
+											echo '</a>';
+											?>
                                         </h3>
-                                        <?php
-                                        if( 0 != $content_number ){
-                                            ?>
+										<?php
+										if( 0 != $content_number ){
+											?>
                                             <div class="skills-content">
-                                                <?php
-                                                portfolio_web_advanced_content( $content_number, $content_from );
-                                                ?>
+												<?php
+												portfolio_web_advanced_content( $content_number, $content_from );
+												?>
                                             </div>
-                                            <?php
-                                        }
-                                        ?>
+											<?php
+										}
+										?>
                                     </div>
-                                    <?php
-                                    $portfolio_web_featured_index ++;
+									<?php
+									$portfolio_web_featured_index ++;
 								endwhile;
 							endif;
 							wp_reset_postdata();
