@@ -20,13 +20,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'alikgqcm_wp_portfolio' );
+define( 'DB_NAME', 'localhost' );
 
 /** MySQL database username */
-define( 'DB_USER', 'alikgqcm_ali' );
+define( 'DB_USER', 'localhost' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'r%l2mJt)CS~3' );
+define( 'DB_PASSWORD', 'localhost' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
@@ -39,8 +39,8 @@ define( 'DB_COLLATE', '' );
 
 define( 'WP_DEBUG', true );
 
-define( 'WP_HOME', 'http://alikhakpash.com' );
-define( 'WP_SITEURL', 'http://alikhakpash.com/resume-portfolio/' );
+define( 'WP_HOME', 'localhost' );
+define( 'WP_SITEURL', 'localhost' );
 
 /**#@+
  * Authentication Unique Keys and Salts.
